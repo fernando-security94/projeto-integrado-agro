@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "Maria",
+    "sobrenome": "Santos",
+    "idade": 35,
+    "ativo": false,
+    "notas": [
+      "A",
+      "A+"
+    ],
+    "telefones": {
+      "residencial": "00 0000-0000",
+      "celular": "00 00000-0000"
+    }
+  },
+  {
+    "nome": "Joana",
+    "sobrenome": "Moretti",
+    "idade": 85,
+    "ativo": true,
+    "notas": [
+      "B",
+      "A"
+    ],
+    "telefones": {
+      "residencial": "11 1111-1111",
+      "celular": "11 11111-1111"
+    }
+  }
+]

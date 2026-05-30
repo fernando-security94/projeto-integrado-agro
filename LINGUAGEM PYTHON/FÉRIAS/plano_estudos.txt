@@ -1,0 +1,241 @@
+🗓️ Plano Semanal de Estudos – Férias
+Objetivo: Consolidar conhecimentos, ganhar fluência prática e aprofundar 
+conceitos fundamentais para análise de dados.
+
+🔹 Segunda-feira – Programação (Lógica e Automação de Dados)
+✅ Revisão de lógica e programação em Python
+
+-Manipulação de arquivos (CSV, JSON, Excel, APIs simples)
+-Funções, loops, condicionais, tratamento de exceções
+- Desafio prático: criar scripts que automatizam tarefas (ex.: organizar arquivos, extrair dados de arquivos, fazer ETL simples)
+- Ferramentas: Python + Jupyter + VS Code
+
+🔹 Terça-feira – Banco de Dados e SQL para Análise
+✅ Revisão de comandos essenciais SQL: SELECT, WHERE, JOIN, GROUP BY, ORDER BY
+
+-Criação de bancos relacionais simulando casos reais
+- Conectar SQL com Python usando sqlite3 ou SQLAlchemy
+- Desafio prático: criar consultas avançadas (subqueries, CTE, Window Functions)
+- Ferramentas: SQLite + DB Browser + Python + Pandas
+
+🔹 Quarta-feira – Análise de Dados com Pandas e NumPy
+✅ Manipulação avançada de DataFrames
+
+- Limpeza de dados (missing values, outliers)
+- Agrupamentos, merges, pivot tables
+- Operações vetorizadas com NumPy para otimizar cálculos
+- Desafio: Criar uma pipeline de dados que recebe um dataset cru, limpa, transforma e gera um relatório em CSV.
+
+🔹 Quinta-feira – Data Visualization Profissional
+✅ Criação de gráficos com Seaborn e Matplotlib (linhas, barras, boxplot, scatter, heatmap)
+
+-Dashboards no Tableau com dados externos (Excel, CSV ou SQL)
+- Boas práticas de visualização (escolha de cores, narrativa dos dados)
+- Desafio: Criar dois dashboards — um interativo no Tableau e outro com Python (matplotlib/seaborn).
+
+🔹 Sexta-feira – Machine Learning Introdutório
+✅ Revisão dos conceitos de ML (supervisionado e não supervisionado)
+
+- Processamento de dados para ML (scaling, encoding)
+- Modelos simples com scikit-learn: regressão, classificação
+- Avaliação de modelos (accuracy, confusion matrix, cross-validation)
+- Desafio: Escolher um dataset simples (ex.: Titanic, Iris, ou algum do Kaggle) e fazer todo o pipeline de ML.
+
+🔹 Sábado – Projeto Prático e Portfólio
+✅ Aplicar os conhecimentos da semana em mini-projetos
+
+- Melhorar projetos antigos (ex.: biblioteca, análise de consumo de energia)
+- Publicar no GitHub com README bem estruturado
+- (Opcional) Criar posts no LinkedIn explicando seus projetos
+
+🔹 Domingo – Livre / Revisão Leve / Curiosidades
+✅ Aprofundar em temas livres:
+
+- APIs, Web Scraping, Dashboards com Streamlit
+- Assistir vídeos, ler artigos, explorar cursos curtos
+- Fazer revisão dos tópicos da semana ou simplesmente descansar
+
+🎯 Dicas Extras para as Férias
+🧠 Pratique mais do que assista: codar > assistir aula
+
+💡 Mantenha um repositório no GitHub organizado
+
+🗒️ Anote dúvidas que surgirem para buscar respostas depois
+
+🔗 Explore dados públicos (IBGE, Kaggle, dados.gov.br)
+
+
+
+
+🏆 Plano de Minicurso de Férias – Análise de Dados
+🔥 Foco: Python, SQL, Pandas, Visualização e Machine Learning Básico
+🗓️ Estrutura Semanal com Exercícios Progressivos
+🔹 Semana 1 – Automação e Manipulação de Dados com Python
+✅ Objetivos:
+Leitura e escrita de arquivos (CSV, Excel, JSON)
+
+Automatizar tarefas e organizar dados
+
+🔧 Exercícios:
+Organizador de Arquivos:
+- Crie um script que mova arquivos .pdf, .jpg e .xlsx para pastas específicas 
+dentro de uma pasta chamada Documentos_Organizados.
+
+Leitor de Arquivos JSON:
+- Crie um arquivo dados.json com dados de clientes e leia com Python.
+
+- Transforme o JSON em DataFrame.
+
+Concatenação de CSVs:
+- Monte uma pasta com 3 CSVs (dados de vendas de janeiro, fevereiro e março).
+- Crie um script que junte todos e gere um vendas_trimestre.csv.
+
+Conversor Excel para CSV:
+- Leia uma planilha Excel e exporte cada aba para um CSV separado.
+
+🔥 Desafio Master:
+Crie um script que leia os arquivos de uma pasta, combine os dados, gere um relatório de vendas e envie automaticamente por e-mail (simulado, basta gerar o arquivo final).
+
+🔹 Semana 2 – SQL para Análise de Dados
+✅ Objetivos:
+Modelagem simples de banco de dados
+Consultas SQL com filtros, joins e agregações
+
+🔧 Exercícios:
+Criação do Banco:
+- Monte um banco empresa.db com as tabelas funcionarios, departamentos e vendas.
+
+Consultas Simples:
+- Liste todos os funcionários do departamento de "Marketing".
+
+Consultas com Agregações:
+- Calcule o total de vendas por funcionário.
+
+Joins:
+- Crie uma consulta que mostre nome do funcionário, departamento e total de vendas.
+
+Consultas Avançadas:
+- Liste os 3 funcionários que mais venderam.
+
+- Qual departamento teve maior faturamento?
+
+🔥 Desafio Master:
+Construa um relatório completo, extraindo dados do banco com Python + SQLite e gerando uma análise em um arquivo Excel.
+
+🔹 Semana 3 – Análise e Tratamento de Dados (Pandas + NumPy)
+✅ Objetivos:
+Manipulação, limpeza e transformação de dados
+
+🔧 Exercícios:
+Limpeza de Dados:
+- Crie um DataFrame com dados faltantes e outliers.
+
+- Trate os dados preenchendo faltantes e removendo outliers.
+
+- Agrupamentos:
+
+- Usando dados de vendas, agrupe por produto, mês e calcule total e média.
+
+Merge e Join com Pandas:
+- Combine dois DataFrames (clientes e vendas) para criar um relatório detalhado.
+
+Criação de Novas Colunas:
+- Crie colunas calculadas como: faturamento = quantidade * preco.
+
+Pivot Table:
+- Gere uma tabela dinâmica mostrando vendas por produto e mês.
+
+🔥 Desafio Master:
+Crie uma pipeline completa:
+
+Leia dados crus -> limpe -> transforme -> gere um relatório final (CSV e Excel).
+
+🔹 Semana 4 – Visualização Profissional (Seaborn, Matplotlib e Tableau)
+✅ Objetivos:
+Criação de gráficos explicativos e dashboards
+
+🔧 Exercícios:
+Gráfico de Linha:
+- Evolução do faturamento mensal.
+
+Gráfico de Barras:
+- Faturamento por produto.
+
+Boxplot:
+- Distribuição dos salários dos funcionários.
+
+Heatmap de Correlação:
+- Correlação entre idade, salário e vendas.
+
+Dashboard no Tableau:
+- Importe dados e crie um dashboard interativo com filtros por produto, mês e funcionário.
+
+🔥 Desafio Master:
+Construa um dashboard completo (1 em Python e 1 no Tableau) respondendo:
+
+Quais são os melhores meses?
+
+Quais os produtos mais vendidos?
+
+Qual vendedor performa melhor?
+
+🔹 Semana 5 – Machine Learning na Prática (Introdução)
+✅ Objetivos:
+Pipeline básico de machine learning supervisionado
+
+🔧 Exercícios:
+Criação de Dataset Simulado:
+- Dados de clientes com idade, salário e se compraram (0/1).
+
+Pré-processamento:
+- Normalização, tratamento de dados categóricos.
+
+Divisão de Dados:
+- Split em treino e teste.
+
+Modelagem:
+- Treinar modelo de classificação (árvore de decisão, KNN ou regressão logística).
+
+Avaliação:
+- Accuracy, matriz de confusão e relatório de classificação.
+
+🔥 Desafio Master:
+Escolha um dataset do Kaggle (ex.: Titanic ou Iris) e execute todo o pipeline de ML:
+
+Exploração -> Limpeza -> Modelagem -> Avaliação -> Relatório final.
+
+🚀 Bônus Opcional:
+Começar a aprender Web Scraping (BeautifulSoup)
+
+Dashboards Interativos com Streamlit
+
+✅ Organização dos Materiais:
+🔖 Crie uma pasta para cada semana
+
+🗂️ Subpastas: /datasets, /scripts, /relatorios, /imagens
+
+📄 Um arquivo README.md para cada projeto, explicando:
+
+Objetivo
+
+Dados utilizados
+
+Resultado
+
+💎 Gabaritos e Exemplos:
+Se você quiser, posso gerar:
+
+🧠 Enunciados detalhados em PDF ou Markdown
+
+💻 Gabaritos comentados dos exercícios
+
+📊 Modelos de dashboards (imagem ou código)
+
+
+
+🎯 Dicas avançadas:
+Nunca use conn.commit() em operações de leitura (SELECT), 
+pois isso serve para gravar alterações no banco (INSERT, UPDATE, DELETE).
+Sempre utilize AS para nomear suas colunas de agregação. Isso melhora muito a legibilidade e clareza do código.
+Você pode transformar esse resultado diretamente em um DataFrame do Pandas 
+para gerar gráficos depois. Quer que eu te mostre como? 🔥

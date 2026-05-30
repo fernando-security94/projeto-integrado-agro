@@ -1,0 +1,52 @@
+Resumo do que fizemos hoje:
+
+- Estruturamos a interface gráfica com Tkinter
+- Criamos janelas para adicionar livros com campos e botões interativos.
+- Organizei a função interface_principal() para abrir o menu principal da aplicação em GUI.
+- Ajustamos o arquivo main.py para rodar a interface Tkinter diretamente
+- Removemos o menu via terminal (def main()) porque agora a interação é via botões.
+- Simplificamos o main.py para chamar interface_principal().
+- Identificamos e corrigimos o erro do banco de dados
+- O erro “no such column: estoque” aconteceu porque a coluna estoque não existia na tabela.
+- Criamos e executamos um script para adicionar essa coluna com ALTER TABLE.
+- Rodamos e testamos o sistema com a interface gráfica
+- A interface abriu sem erros.
+- O sistema exibiu mensagens padrões para banco vazio, indicando que está funcionando corretamente.
+
+
+Próximos passos sugeridos:
+- Implementar o cadastro real de livros e usuários via interface.
+- Criar telas para listar livros, alugar e devolver, todas com feedbacks visuais.
+-  Pensar em modularização e tratamento de erros mais refinados.
+- Talvez começar a adicionar relatórios visuais com gráficos (se curtir).
+
+
+
+Passos para 23/05
+
+1. Cadastro via Interface (usuário e livro)
+No interface.py, vamos criar formulários simples com tkinter para:
+
+Cadastrar usuários: nome e ID.
+
+Cadastrar livros: título, autor, ISBN, estoque.
+
+Essas funções vão se comunicar com sistema_biblioteca.py, que chama banco_de_dados.py para salvar no banco.
+
+2. Telas de Listar, Alugar e Devolver
+Criar janelas com botões e feedback visual:
+
+Listar livros: mostrar todos os livros cadastrados (usando Treeview ou Listbox).
+
+Alugar: campo para digitar ID do usuário e ISBN do livro.
+
+Devolver: mesmo esquema do aluguel.
+
+Mostrar mensagem de sucesso/erro (com messagebox ou Label).
+
+3. Modularização e Tratamento de Erros
+Separar os blocos de interface em funções reutilizáveis.
+
+Adicionar try/except para capturar erros no banco ou dados inválidos.
+
+Validar entradas antes de salvar ou buscar (ex: estoque negativo, campos vazios etc).

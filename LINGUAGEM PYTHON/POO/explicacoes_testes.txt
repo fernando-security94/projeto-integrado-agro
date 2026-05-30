@@ -1,0 +1,136 @@
+🔹 3. Classe DataPrep: pipeline de pré-processamento
+Essa classe organiza o pré-processamento de dados em métodos reutilizáveis.
+
+🔸 __init__: construtor
+
+def __init__(self, data: pd.DataFrame) -> None:
+    self.data = data.copy()
+Cria uma cópia dos dados para evitar modificar o DataFrame original.
+
+🔸 remover_variaveis(): remove colunas inúteis
+
+def remover_variaveis(self) -> None:
+    colunas_para_remover = [...]
+    self.data.drop(columns=colunas_para_remover, inplace=True, errors='ignore')
+Remove colunas que são texto desnecessário ou redundante, como nome, ticket, embarque e outras do tipo object.
+
+🔸 tratar_nulos(): preenche dados ausentes
+
+def tratar_nulos(self) -> None:
+    self.data['age'] = self.data['age'].fillna(
+        self.data.groupby(['pclass', 'sex'])['age'].transform('median')
+    )
+    self.data['embarked'] = self.data['embarked'].fillna('S')
+Preenche age com a mediana de cada grupo de classe + sexo (preserva lógica social do Titanic).
+
+Preenche embarked com 'S' (porto mais comum).
+
+🔸 tratar_variaveis_categoricas(): transforma texto em números
+
+sexo = {'male': 0, 'female': 1}
+self.data['sex'] = self.data['sex'].map(sexo)
+Converte sex para 0 (masculino) e 1 (feminino).
+
+
+embarked_dummies = pd.get_dummies(self.data['embarked'], prefix='embarked')
+self.data = pd.concat([self.data, embarked_dummies], axis=1)
+self.data.drop(columns=['embarked'], inplace=True)
+Converte a coluna embarked em variáveis dummy (binárias) e remove a original.
+
+🔸 normalizar_dados(): padroniza os dados numéricos
+
+resposta = self.data['survived'].reset_index(drop=True)
+variaveis = self.data.drop(columns='survived').reset_index(drop=True)
+
+scaler = MinMaxScaler()
+variaveis_normalizadas = scaler.fit_transform(variaveis)
+variaveis_df = pd.DataFrame(variaveis_normalizadas, columns=variaveis.columns)
+
+self.data = pd.concat([variaveis_df, resposta], axis=1)
+Separa as variáveis (X) da resposta (y).
+
+Aplica MinMaxScaler para normalizar os dados numéricos entre 0 e 1.
+
+Recombina as variáveis com a coluna de destino (survived).
+
+🔸 separar_treino_teste(): divide os dados
+
+return train_test_split(self.data, test_size=0.3, random_state=2021)
+Divide os dados em treino (70%) e teste (30%) com random seed fixa para garantir reprodutibilidade.
+
+🔸 preparar_dados(): executa o pipeline completo
+
+self.tratar_nulos()
+self.tratar_variaveis_categoricas()
+self.remover_variaveis()
+self.normalizar_dados()
+return self.separar_treino_teste()
+Chama os métodos anteriores em ordem para preparar os dados por completo.
+
+🔹 4. Aplicação da classe e criação dos datasets
+
+prep = DataPrep(df)
+treino, teste = prep.preparar_dados()
+Aplica todo o pipeline ao DataFrame df, retornando os conjuntos de treino e teste.
+
+🔹 5. Separação de variáveis e resposta
+
+X_treino = treino.drop(columns='survived')
+y_treino = treino['survived']
+
+X_teste = teste.drop(columns='survived')
+y_teste = teste['survived']
+X são as variáveis de entrada.
+
+y é a variável alvo (sobreviveu ou não).
+
+🔹 6. Modelo de regressão logística
+
+clf = LogisticRegression(max_iter=1000)
+clf.fit(X_treino, y_treino)
+y_pred = clf.predict(X_teste)
+Treina o modelo com os dados de treino.
+
+Faz previsões nos dados de teste.
+
+🔹 7. Avaliação do modelo
+
+print("Score de acurácia:", accuracy_score(y_teste, y_pred))
+Avalia o modelo com a acurácia, que é a proporção de acertos no teste.
+
+🔹 8. Estatísticas adicionais (exploratórias)
+
+print(df.isna().sum())
+print(df['age'].median())
+print(df.groupby(['pclass', 'sex'], as_index=False)['age'].median())
+Essas linhas mostram:
+
+Quantidade de valores nulos.
+
+Mediana geral das idades.
+
+Mediana de idade por classe e sexo.
+
+✅ Resumo da lógica geral
+Etapa	Objetivo
+Carregamento	Trazer os dados para análise
+Classe DataPrep	Organizar os passos de pré-processamento
+Pré-processamento	Tratar nulos, transformar texto em números, normalizar dados
+Separação	Dividir os dados em treino e teste
+Modelagem	Treinar um modelo de regressão logística
+Avaliação	Verificar acurácia do modelo
+
+
+Reflita
+
+1. Como você identificaria e evitaria o overfitting em um modelo de machine learning 
+durante a seleção de variáveis? Quais práticas e técnicas seriam úteis nesse processo?
+
+2. Considerando a diversidade de métricas de avaliação de modelos de classificação, 
+como escolher a métrica mais adequada para um problema específico? 
+Como você lidaria com a avaliação de modelos em conjuntos de dados desbalanceados?
+
+3. Por que é importante entender e aplicar boas práticas de modelagem, 
+como as recomendadas pelo Guia de Boas Práticas de Modelagem (GMP)? 
+Como essas práticas contribuem para a qualidade, transparência e replicabilidade dos resultados 
+em projetos de machine learning?

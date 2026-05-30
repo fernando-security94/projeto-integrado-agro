@@ -1,0 +1,12 @@
+# Ambientes virtuais
+venv/
+*/venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Dados sensíveis
+*.env
