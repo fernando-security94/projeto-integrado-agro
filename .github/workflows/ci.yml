@@ -25,7 +25,7 @@ jobs:
           pip install pandas numpy scipy scikit-learn pytest
 
       - name: Rodar testes do Pipeline ETL e do Modelo
-        run: pytest test_etl.py test_modelo.py -v
+        run: pytest "PROJETO INTEGRADO- AGRO/test_etl.py" "PROJETO INTEGRADO- AGRO/test_modelo.py" -v
 
       - name: Pipeline validado
         run: echo 'Todos os testes passaram — código aprovado para deploy'
